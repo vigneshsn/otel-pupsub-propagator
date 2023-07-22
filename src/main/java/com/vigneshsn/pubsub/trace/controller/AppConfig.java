@@ -30,10 +30,12 @@ public class AppConfig {
     String subId = "demo-sub";
     String topicId = "mytesttopic";
 
+    String pubsubEmulatorHostPort = "localhost:8085";
+
     @Produces
     @Singleton
     public TransportChannelProvider getChannel() {
-        ManagedChannel managed = ManagedChannelBuilder.forTarget("localhost:8085").usePlaintext().build();
+        ManagedChannel managed = ManagedChannelBuilder.forTarget(pubsubEmulatorHostPort).usePlaintext().build();
         return FixedTransportChannelProvider.create(GrpcTransportChannel.create(managed));
     }
 
@@ -126,6 +128,5 @@ public class AppConfig {
                     kv("subscription", subscriber.getSubscriptionNameString()));
         }
     }
-
 
 }
