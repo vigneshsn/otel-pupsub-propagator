@@ -1,4 +1,4 @@
-package com.vigneshsn.pubsub.trace.propagator;
+package com.vigneshsn.pubsub.trace.propagator.custom;
 
 import io.opentelemetry.api.trace.SpanContext;
 import io.opentelemetry.api.trace.TraceFlags;

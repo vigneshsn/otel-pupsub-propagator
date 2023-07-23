@@ -6,13 +6,19 @@ import io.opentelemetry.context.Context;
 import io.opentelemetry.context.propagation.TextMapGetter;
 import io.opentelemetry.context.propagation.TextMapPropagator;
 import io.opentelemetry.context.propagation.TextMapSetter;
+import jakarta.enterprise.context.ApplicationScoped;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.annotation.Nullable;
 import java.util.Collection;
 
 @Slf4j
+@ApplicationScoped
 public class PubsubPropagator implements TextMapPropagator {
+    @Override
+    public String toString() {
+        return "PubsubPropagator";
+    }
 
     W3CTraceContextPropagator traceContextPropagator = W3CTraceContextPropagator.getInstance();
     public PubsubPropagator() {
@@ -54,7 +60,7 @@ public class PubsubPropagator implements TextMapPropagator {
         @Override
         public String get(@Nullable Object carrier, String key) {
             PubsubMessage pubsubMessage = (PubsubMessage) carrier;
-            return pubsubMessage.getAttributesMap().get("key");
+            return pubsubMessage.getAttributesMap().get(key);
         }
     }
 }

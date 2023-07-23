@@ -1,4 +1,4 @@
-package com.vigneshsn.pubsub.trace.propagator;
+package com.vigneshsn.pubsub.trace.propagator.custom;
 
 import com.google.api.core.ApiFuture;
 import com.google.cloud.pubsub.v1.Publisher;

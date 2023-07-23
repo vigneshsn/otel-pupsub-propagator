@@ -1,7 +1,7 @@
 # otel-pupsub-propagator
 
 ## Context
-This repository attempts to create an Open telemetry(OTEL) for Google pubsub.
+This repository attempts to create an Open telemetry(OTEL) propagator for Google pubsub.
 OTEL does not currently have support for this feature.
 
 ## About this app
@@ -23,3 +23,9 @@ will be created automatically.
 
 ### run locally
 ```./gradlew quarkusDev```
+
+
+### testing app
+```agsl
+http://localhost:8080/greetings/rock
+```

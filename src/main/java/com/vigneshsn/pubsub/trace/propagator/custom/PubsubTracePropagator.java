@@ -1,4 +1,4 @@
-package com.vigneshsn.pubsub.trace.propagator;
+package com.vigneshsn.pubsub.trace.propagator.custom;
 
 import com.google.pubsub.v1.PubsubMessage;
 import io.opentelemetry.api.trace.Span;
